@@ -1,5 +1,5 @@
 import re
-
+import extract
 Information = {
 
 }
@@ -7,7 +7,9 @@ Bias_compiled = []
 BStart_compiled = []
 
 
-with open ("CAS0MGXRAP_20180240000_01D_01D_DCB.BSX","r") as file:
+file=extract.extracted()
+
+with open (file,"r") as file:
 
     for line in file:
         match_bias = re.match("(.*)([DSB][ ]{2}[A-Z][0-9]{3})", line)
